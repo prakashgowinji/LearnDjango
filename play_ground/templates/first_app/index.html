@@ -5,30 +5,37 @@
     <meta charset="utf-8">
     <title>DjangoLevelTwo</title>
     <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
   </head>
   <body>
     <h1>Welcome to Django Level Two</h1>
     <h2>Here are your access records</h2>
+    <h3>Go to /formpage to fill out the forms</h3>
     <img src="{% static "images/django.jpg" %}" alt="Photo of Django not loading" width="20%">
-    <div class="djangotwo">
-      {% if access_records %}
-      <table>
-        <thead>
-          <th>Site Name</th>
-          <th>Date Accessed</th>
-        </thead>
-        {% for acc in access_records %}
-        <tr>
-          <td>{{ acc.name }}</td>
-          <td>{{ acc.date }}</td>
-        </tr>
 
-        {% endfor %}
-      </table>
-      {% else %}
-      <p>No Access Records found!</p>
-      {% endif %}
+    <div class="container">
+      <div class="jumbotron">
+        <div class="djangotwo">
+          {% if access_records %}
+          <table>
+            <thead>
+              <th>Site Name</th>
+              <th>Date Accessed</th>
+            </thead>
+            {% for acc in access_records %}
+            <tr>
+              <td>{{ acc.name }}</td>
+              <td>{{ acc.date }}</td>
+            </tr>
+
+            {% endfor %}
+          </table>
+          {% else %}
+          <p>No Access Records found!</p>
+          {% endif %}
+        </div>
+      </div>
     </div>
-
   </body>
 </html>
