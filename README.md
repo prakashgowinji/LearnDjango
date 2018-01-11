@@ -1,4 +1,4 @@
-# LearnDjango
+<h1>LearnDjango</h1>
 Step by Step Walk through of Django tutorial
 
 <h6>advanced_section</h6>
